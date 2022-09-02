@@ -974,16 +974,16 @@ public:
 	{
 		string str_nome;
 		cout <<"\n Digite o nome do produto que procura: ";
-		cin >> str_nome;
+		cin.ignore();
+		getline(cin, str_nome);
 		int achou = 1;
 		int i = 0;
 		for(Produto p: stockProdutosTotais_)
 		{
 			string alvo = p.obterProdutoNome();
 			cout << p.obterProdutoNome(); ;
-			achou = str_nome.compare(alvo);
-			if(achou == 0)
-			{
+			achou = alvo.compare(str_nome);
+			if(achou == 0){
 				cout << "Produto encontrado! " << endl;
 				p.mostreProduto();
 				return i;
