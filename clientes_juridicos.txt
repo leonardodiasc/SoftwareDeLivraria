@@ -1,0 +1,9 @@
+Nome: Coca-cola
+Rua: Av.Braisl
+Número: 54
+Bairro: Lagoa-Nova
+CEP: 6489
+Telefone: 58794
+CNPJ: 647654
+Razão Social: Coca-cola
+

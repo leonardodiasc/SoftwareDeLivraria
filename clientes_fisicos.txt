@@ -1,0 +1,9 @@
+Nome: lili
+Rua: 545
+Número: 12
+Bairro: 2112
+CEP: ssdad
+Telefone: 121
+CPF: 2121
+RG: 212
+

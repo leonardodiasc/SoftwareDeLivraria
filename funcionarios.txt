@@ -1,0 +1,11 @@
+Nome: trab
+Rua: white
+Número: 515
+Bairro: black
+CEP: 597884
+Telefone: 66995
+CPF: 875489
+RG: 5542
+Data de Contratação: 20/50/1946
+Salário: R$ 6664
+

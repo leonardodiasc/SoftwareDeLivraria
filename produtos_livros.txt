@@ -1,0 +1,7 @@
+Nome: Moby Dick
+Quantidade: 15
+Preço: R$87.3
+Gênero: Aventura
+Volume: 9
+Editora: Abril
+

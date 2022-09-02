@@ -1,0 +1,7 @@
+Nome: Caras
+Quantidade: 96
+Preço: R$2.5
+Gênero: Fofoca
+Edição: 87
+Publicador: Abril
+
