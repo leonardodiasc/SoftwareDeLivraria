@@ -565,6 +565,18 @@ public:
 
 		}
 
+		for(Produto p: stockProdutos_)
+		{
+			stockProdutosTotais_.push_back(p);
+		}
+		for(Produto p: stockRevistas_)
+		{
+			stockProdutosTotais_.push_back(p);
+		}
+		for(Produto p: stockLivros_)
+		{
+			stockProdutosTotais_.push_back(p);
+		}
 		arquivoLivros.close();
 		arquivoRevistas.close();
 		arquivoDiversos.close();
@@ -955,18 +967,22 @@ public:
 		return -1;
 	}
 
-	int buscarProdutoDiverso(string str_nome)
+	int buscarProduto()
 	{
-		
+		string str_nome;
+		cout <<"\n Digite o nome do produto que procura: ";
+		cin >> str_nome;
 		int achou = 1;
 		int i = 0;
-		for(Produto p: stockProdutos_)
+		for(Produto p: stockProdutosTotais_)
 		{
 			string alvo = p.obterProdutoNome();
+			cout << p.obterProdutoNome(); ;
 			achou = str_nome.compare(alvo);
 			if(achou == 0)
 			{
 				cout << "Produto encontrado! " << endl;
+				p.mostreProduto();
 				return i;
 			}
 			else
@@ -1029,7 +1045,7 @@ public:
 		string key;
 		cout << " Digite o nome do produto que deseja remover: ";
 		getline(cin, key);
-		int indice = buscarProdutoDiverso(key);
+		int indice = buscarProduto();
 
 		if(indice == -1)
 		{
@@ -1078,7 +1094,7 @@ public:
 	void removerProduto()
 	{
 		int op;
-		cout << "Qual tipo de produto deseja remover? 1 - Livro | 2 - Revista | 3 - Produto Diverso" << endl;
+		cout << "Qual tipo de produto deseja remover? 1 - Livro | 2 - Revista | 3 - Produto Diverso |" << endl;
 		cin >> op;
 		cin.ignore();
 		switch(op)
@@ -1507,15 +1523,16 @@ public:
 	void modificar_produtos()
 	{
 		int op;
-		cout << "Escolha a operaçao que deseja realizar:\n 1 - Adicionar Produto | 2 - Remover Produto | 3 - Mostrar Produtos: ";
+		cout << "Escolha a operaçao que deseja realizar:\n 1 - Adicionar Produto | 2 - Remover Produto | 3 - Mostrar Produtos | 4 - Procurar Produtos: ";
 		cin >> op;
-		if(validar_escolha(op,3))
+		if(validar_escolha(op,4))
 		{
 			switch(op)
 			{
 				case 1: {adicionarProduto(); break;}
 				case 2: {removerProduto(); break;}
 				case 3: {mostrarCadastroLivros(); mostrarCadastroRevistas(); mostrarCadastroProdutosDiversos(); break;}
+				case 4:{buscarProduto(); break;}
 			}
 		}
 		else
@@ -1528,7 +1545,7 @@ public:
 	void modificar_clientes()
 	{
 		int op;
-		cout << "Escolha a operaçao que deseja realizar:\n 1 - Adicionar Cliente | 2 - Remover Cliente | 3 - Mostrar Clientes: ";
+		cout << "Escolha a operaçao que deseja realizar:\n 1 - Adicionar Cliente | 2 - Remover Cliente | 3 - Mostrar Clientes ";
 		cin >> op;
 		if(validar_escolha(op,3))
 		{
@@ -1569,9 +1586,10 @@ public:
 	void abrirLivraria()
 	{
 		cout << "Bem-vindo a livraria, gerente!" << endl;
-		cout << "As operacoes possíveis serao disponibilizadas para voce!\nPressione 'Crtl + D' para terminar o programa!" << endl;
+		cout << "As operacoes possíveis serao disponibilizadas para voce!\nPressione 'Crtl + D' para terminar o programa! Não feche diretamente, sempre pressione o comando (Ctrl + D) para salvar os dados." << endl;
 		char c;
 		inicalizarTudo();
+		escolha_elemento_de_atuacao();
 		while(cin >> c)
 		{
 			escolha_elemento_de_atuacao();
@@ -1584,6 +1602,7 @@ private:
 	deque<Produto> stockProdutos_;
 	deque<Livro> stockLivros_;
 	deque<Revista> stockRevistas_;
+	deque<Produto> stockProdutosTotais_;
 	deque<Cliente_fisico> cadastroClienteF_;
 	deque<Cliente_juridico> cadastroClienteJ_;
 	deque<Funcionario> cadastroFuncionario_;

@@ -2,3 +2,7 @@ Nome: Cafe
 Quantidade: 81
 Preço: R$2.7
 
+Nome: Chocolate bombom
+Quantidade: 2
+Preço: R$1
+
