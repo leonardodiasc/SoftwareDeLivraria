@@ -885,18 +885,21 @@ public:
 		Livro l;
 		l.leiaLivro();
 		stockLivros_.push_back(l);
+		stockProdutosTotais_.push_back(l);
 	}
 	void adicionarRevista()
 	{
 		Revista r;
 		r.leiaRevista();
 		stockRevistas_.push_back(r);
+		stockProdutosTotais_.push_back(r);
 	}
 	void adicionarDiverso()
 	{
 		Produto p;
 		p.leiaProduto();
 		stockProdutos_.push_back(p);
+		stockProdutosTotais_.push_back(p);
 	}
 
 	int buscarClienteF(string str_cpf)

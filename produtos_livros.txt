@@ -5,3 +5,10 @@ Gênero: Aventura
 Volume: 9
 Editora: Abril
 
+Nome: Pokemon
+Quantidade: 2
+Preço: R$19
+Gênero: Infantil
+Volume: 2
+Editora: Abril
+
